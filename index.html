@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini e-Dnevnik</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mini e-Dnevnik</h1>
+    <p>Portal za ocjene i bilješke</p>
+  </header>
+
+  <main>
+    <!-- Login Section -->
+    <div class="login" id="loginSection">
+      <h2>Prijava</h2>
+      <select id="userRole">
+        <option value="student">Učenik</option>
+        <option value="teacher">Učitelj/Učiteljica</option>
+      </select>
+      <input type="text" id="username" placeholder="Korisničko ime" required />
+      <button onclick="login()">Prijavi se</button>
+    </div>
+
+    <!-- Grade Form Section -->
+    <div class="card hidden" id="teacherPanel">
+      <h2>Dodaj novu ocjenu</h2>
+      <form id="gradeForm">
+        <input type="text" id="studentName" placeholder="Ime učenika" required />
+        <input type="text" id="subject" placeholder="Predmet" required />
+        <input type="number" id="grade" placeholder="Ocjena (1-5)" min="1" max="5" required />
+        <textarea id="note" placeholder="Bilješka (opcionalno)"></textarea>
+        <button type="submit">Spremi ocjenu</button>
+      </form>
+    </div>
+
+    <!-- Grades List -->
+    <div class="card hidden" id="studentPanel">
+      <h2>Ocjene</h2>
+      <ul id="grades"></ul>
+    </div>
+  </main>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
